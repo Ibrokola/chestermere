@@ -1,0 +1,10 @@
+.logo {
+    float: left;
+    height: 114px;
+    margin-top: 8px;
+    width: 35%;
+  }
+
+.logo a > img {
+    width: 100%;
+}

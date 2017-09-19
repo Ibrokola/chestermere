@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>{% block title %}Chestermere Lake Registry{% endblock %}</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'>
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Meta OG -->
+    <meta property="og:title" content="Chestermere Lake Registry">
+    <meta property="og:description" content="Vehicle registration">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="Chestermere Lake Registry">
+    <!-- /Meta OG -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="Chestermere Lake Registry">
+    <meta name="twitter:description" content="Vehicle registration">
+    <meta name="twitter:title" content="Chestermere Lake Registry">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:creator" content="">
+
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/paper-kit.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/demo.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/vendors/jquery.atwho.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+    <!--     Fonts and icons     -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{% static 'css/nucleo-icons.css' %}" rel="stylesheet" />
+    {% block extra-header %}{% endblock %}
+</head>
+    <body>
+        {% include "navbar.html" %}
+        <main>
+            <div class="">
+                {% block content %}{% endblock %}
+            </div>
+        </main> 
+        {% include "footer.html" %}
+    </body>
+</html>
+   

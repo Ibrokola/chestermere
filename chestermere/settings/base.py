@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'additional',
     'home',
     'services',
+    'search',
 ]
 
 MIDDLEWARE = [

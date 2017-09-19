@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import ContactHeader, Contact
+
+
+admin.site.register(ContactHeader)
+admin.site.register(Contact)

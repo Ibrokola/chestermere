@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import RegHeaderImage, Section, RegForm
+
+
+admin.site.register(RegHeaderImage)
+admin.site.register(Section)
+admin.site.register(RegForm)

@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import HomeCarousel, Marketing
+
+admin.site.register(HomeCarousel)
+admin.site.register(Marketing)

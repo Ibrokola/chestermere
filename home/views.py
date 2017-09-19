@@ -1,3 +1,14 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+from .models import HomeCarousel, Marketing
+
+def home(request):
+    carousel = HomeCarousel.objects.all()
+    market = Marketing.objects.all()
+    context = {
+        "carousel": carousel,
+        "market": market
+    }
+    template = "home/home.html"
+    return render(request, template, context)

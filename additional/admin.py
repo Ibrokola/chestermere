@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import AddHeader, AddCategory
+
+admin.site.register(AddHeader)
+admin.site.register(AddCategory)

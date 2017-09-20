@@ -11,8 +11,12 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h2 class="h2-responsive heading text-center">Welcome to Chestermerelake Registry</h2>
-                <p></p>
+                {% if intro %}
+                    {% for item in intro %}
+                        <h2 class="h2-responsive heading text-center">{{ item.title }}</h2>
+                        <p class="text-center">{{ item.intro }}</p>
+                    {% endfor %}
+                {% endif %}
             </div>
 
         </div>
@@ -21,9 +25,16 @@
 <section class="section-1">
     <div class="container">
         <div class="row">
-            <div class="col-md-">
-
+            {% for item in market %}
+            <div class="col-md-3">
+                {% if item.image %}
+                    <img src="{{ item.image.url }}" class="img-fluid img-responsive" alt="market.image">
+                {% endif %}
+                <h4 class="h4-responsive" style="margin-top: 10px;"> {{ item.title }} </h4>
+                <p> {{ item.description }} </p>
+                <a href=""><button class="btn btn-outline-success" style="margin-bottom: 10px;">more</button></a>
             </div>
+            {% endfor %}
         </div>
     </div>
 </section>

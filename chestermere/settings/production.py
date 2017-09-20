@@ -1,5 +1,6 @@
 import os
 
+from chestermere.aws.conf import *
 from decouple import config 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -24,6 +25,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'storages',
+    'crispy_forms',
+
 
     'registry',
     'about',

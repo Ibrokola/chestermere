@@ -3,7 +3,7 @@
 
 {% block content %}
 <section class="section-landing-1">
-    <div class="container" style="padding-top: 10px;">
+    <div class="container" style="padding-top:5px;">
         {% include "carousel.html" with carousel=carousel%}
     </div>
 </section>
@@ -46,7 +46,7 @@
                 {% if item.image %}
                     <img src="{{ item.image.url }}" class="img-fluid img-responsive " alt="market.image">
                 {% endif %}
-                <h5 class="h5-responsive text-center" style="margin-top: 10px;"> {{ item.title }} </h5>
+                <h5 class="h5-responsive text-center" style="margin-top: 15px;"> {{ item.title }} </h5>
                 {% if item.button_remind %}
                     <a href="{{ item.button_remind }}" target="_blank" style="text-decoration: none;"><button class="btn btn-outline-success btn-block" style="margin-bottom: 10px;">Set Reminder</button></a>
                 {% endif %}

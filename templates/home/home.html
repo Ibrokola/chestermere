@@ -41,7 +41,20 @@
 <section class="section-2">
     <div class="container">
         <div class="row">
-
+            {% for item in remind %}
+            <div class="col-md-6 text-center">
+                {% if item.image %}
+                    <img src="{{ item.image.url }}" class="img-fluid img-responsive " alt="market.image">
+                {% endif %}
+                <h5 class="h5-responsive text-center" style="margin-top: 10px;"> {{ item.title }} </h5>
+                {% if item.button_remind %}
+                    <a href="{{ item.button_remind }}" target="_blank" style="text-decoration: none;"><button class="btn btn-outline-success btn-block" style="margin-bottom: 10px;">Set Reminder</button></a>
+                {% endif %}
+                {% if item.button_renew %}
+                    <a href="{{ item.button_renew }}" target="_blank" style="text-decoration: none;"><button class="btn btn-outline-success btn-block" style="margin-bottom: 10px;">Renew Now</button></a>
+                {% endif %}
+            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

@@ -5,9 +5,9 @@ from .models import HomeCarousel, Marketing, HomeIntro, Reminder
 
 def home(request):
     carousel = HomeCarousel.objects.all()
-    market = Marketing.objects.all()
+    market = Marketing.objects.all().order_by('?')
     intro = HomeIntro.objects.all()
-    remind = Reminder.objects.all()
+    remind = Reminder.objects.all().order_by('?')
     context = {
         "carousel": carousel,
         "market": market,

@@ -9,7 +9,8 @@ from home.views import home
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
-    url(r'^about/', include('about.urls'))
+    url(r'^about/', include('about.urls')),
+    url(r'^forms/', include('registry.urls'))
 ]
 
 

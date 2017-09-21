@@ -31,10 +31,10 @@
                 {% endif %}
                 <h5 class="h5-responsive text-center" style="margin-top: 15px;"> {{ item.title }} </h5>
                 {% if item.button_remind %}
-                    <a href="{{ item.button_remind }}" target="_blank" style="text-decoration: none;"><button class="btn btn-outline-success btn-block" style="margin-bottom: 10px;">Set Reminder</button></a>
+                    <a href="{{ item.button_remind }}" target="_blank" style="text-decoration: none;"><button class="btn btn-outline-success btn-round btn-block" style="margin-bottom: 10px;">Set Reminder</button></a>
                 {% endif %}
                 {% if item.button_renew %}
-                    <a href="{{ item.button_renew }}" target="_blank" style="text-decoration: none;"><button class="btn btn-outline-success btn-block" style="margin-bottom: 10px;">Renew Now</button></a>
+                    <a href="{{ item.button_renew }}" target="_blank" style="text-decoration: none;"><button class="btn btn-outline-success btn-round btn-block" style="margin-bottom: 10px;">Renew Now</button></a>
                 {% endif %}
             </div>
             {% endfor %}

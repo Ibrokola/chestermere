@@ -105,6 +105,12 @@ footer a:hover{
     padding-bottom: 50px;
 }
 
+.section-about{
+    background-color: #F3F9F6;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 /* .icons {  
     float: right;
     height: auto;

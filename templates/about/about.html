@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section class="section-landing" style="padding-top: 5px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {% for obj in abhead %}
+                    {% if obj.image %}
+                        <img src="{{ obj.image.url }}" alt="header.png" class="img-fluid">              
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3">   
+
+            </div>
+            <div class="col-md-9 col-sm-9">
+                {% for item in abt %}
+                    <h4 class="h4-responsive">{{ item.title }}</h4>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

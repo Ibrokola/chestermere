@@ -27,11 +27,13 @@ def reg_list(request):
 
 def reg_detail(request):
     header = RegHeaderImage.objects.all()
-    reg = RegForm.objects.all()
+    reg1 = RegForm.objects.filter(section__title='section1')
+    reg2 = RegForm.objects.filter(section__title='section2')
     template = 'registry/regforms.html'
     context = {
         'header': header,
-        'reg': reg
+        'reg1': reg1,
+        'reg2': reg2
     }
     return render(request, template, context)
 

@@ -25,7 +25,7 @@
             <div class="col-md-9 col-sm-9">
                 {% for item in abt %}
                     <h4 class="h4-responsive">{{ item.title }}</h4>
-                    <h5 class="h5-responsive" style="padding-top: 10px;">{{ item.sub_title }}</h5>
+                    <h5 class="h5-responsive" style="padding-top: 10px; color:orange;">{{ item.sub_title }}</h5>
                     <p>{{ item.description|safe }}</p>
                 {% endfor %}
             </div>
@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-9 col-sm-9">
                 {% for obj in abad1 %}
-                    <h5 class="h5-responsive" style="padding-top: 30px;">{{ obj.title }}</h5>
+                    <h5 class="h5-responsive" style="padding-top: 30px; color:orange;">{{ obj.title }}</h5>
                 {% endfor %}
                 <div class="row">
                     {% for obj in abad2 %}

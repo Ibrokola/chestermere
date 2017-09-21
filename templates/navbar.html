@@ -2,11 +2,15 @@
 <div class="bg-faded" style="background-color:#4F9269;">
     <div class="container">
         <nav class="navbar navbar-toggleable-md navbar-inverse" style="background-color:#4F9269;">
+               <!-- style="padding-top: 10px;" -->
+               <div>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                </div>
                     <a class="navbar-brand" href="/">
-                        <img src="{% static 'img/logo.png' %}" width="230" height="60" class="img-responsive"/>
+                        {% comment %} <img src="{% static 'img/rsz_logo.png' %}" width="240" height="60" class="img-responsive"/> {% endcomment %}
+                        <img src="{% static 'img/rsz_logo.png' %}" width="240" height="60" class="img-responsive"/>
                     </a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">

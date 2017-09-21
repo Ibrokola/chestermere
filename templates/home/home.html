@@ -18,23 +18,6 @@
                     {% endfor %}
                 {% endif %}
             </div>
-
-        </div>
-    </div>
-</section>
-<section class="section-1">
-    <div class="container">
-        <div class="row">
-            {% for item in market %}
-            <div class="col-md-3 col-sm-3">
-                {% if item.image %}
-                    <img src="{{ item.image.url }}" class="img-fluid img-responsive" alt="market.image">
-                {% endif %}
-                <h4 class="h4-responsive" style="margin-top: 10px;"> {{ item.title }} </h4>
-                <p> {{ item.description }} </p>
-                <a href=""><button class="btn btn-outline-success" style="margin-bottom: 10px;">more</button></a>
-            </div>
-            {% endfor %}
         </div>
     </div>
 </section>
@@ -58,4 +41,21 @@
         </div>
     </div>
 </section>
+<section class="section-1">
+    <div class="container">
+        <div class="row">
+            {% for item in market %}
+            <div class="col-md-3 col-sm-3">
+                {% if item.image %}
+                    <img src="{{ item.image.url }}" class="img-fluid img-responsive" alt="market.image">
+                {% endif %}
+                <h4 class="h4-responsive" style="margin-top: 10px;"> {{ item.title }} </h4>
+                <p> {{ item.description }} </p>
+                <a href=""><button class="btn btn-outline-success" style="margin-bottom: 10px;">more</button></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 {% endblock %}

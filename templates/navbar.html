@@ -1,16 +1,19 @@
 {% load static %}
 <div class="bg-faded" style="background-color:#4F9269;">
     <div class="container">
-        <nav class="navbar navbar-toggleable-md navbar-inverse" style="background-color:#4F9269;">
+        <nav class="navbar navbar-toggleable-md navbar-inverse" style="background-color:#4F9269;" color-on-scroll="500">
                <!-- style="padding-top: 10px;" -->
-               <div>
+              <!-- <div style="margin-top: 15px;"> -->
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                   <!-- <span class="navbar-toggler-icon"></span> -->
+                   <span class="navbar-toggler-bar"></span>
+                   <span class="navbar-toggler-bar"></span>
+                   <span class="navbar-toggler-bar"></span>
                 </button>
-                </div>
+               <!-- </div> -->
                     <a class="navbar-brand" href="/">
                         {% comment %} <img src="{% static 'img/rsz_logo.png' %}" width="240" height="60" class="img-responsive"/> {% endcomment %}
-                        <img src="{% static 'img/rsz_logo.png' %}" width="240" height="60" class="img-responsive"/>
+                        <img src="{% static 'img/rsz_logo.png' %}" width="240" height="50" class="img-responsive"/>
                     </a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
@@ -33,13 +36,14 @@
                         <li class="nav-item">
                            <!-- <a class="nav-link" href="#">Contact</a> -->
                         </li>
+                        
+                        <form class="form-inline container-fluid" style="margin-right:10px;">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="search here..." aria-describedby="basic-addon1">
+                                <span class="input-group-addon" id="basic-addon1">search</span>
+                            </div>
+                        </form>
                     </ul>
-                    <form class="form-inline">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="search here..." aria-describedby="basic-addon1">
-                            <span class="input-group-addon" id="basic-addon1">search</span>
-                        </div>
-                    </form>
                 </div>
         </nav>
     </div>

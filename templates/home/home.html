@@ -27,7 +27,7 @@
             {% for item in remind %}
             <div class="col-md-6 col-sm-6 text-center">
                 {% if item.image %}
-                    <img src="{{ item.image.url }}" class="img-fluid img-responsive img-rounded" alt="market.image">
+                    <img src="{{ item.image.url }}" class="img-fluid img-responsive" alt="market.image">
                 {% endif %}
                 <h5 class="h5-responsive text-center" style="margin-top: 15px;"> {{ item.title }} </h5>
                 {% if item.button_remind %}
@@ -47,7 +47,7 @@
             {% for item in market %}
             <div class="col-md-3 col-sm-3">
                 {% if item.image %}
-                    <img src="{{ item.image.url }}" class="img-fluid img-responsive" alt="market.image">
+                    <img src="{{ item.image.url }}" class="img-rounded img-fluid img-responsive" alt="market.image">
                 {% endif %}
                 <h4 class="h4-responsive" style="margin-top: 10px;"> {{ item.title }} </h4>
                 <p> {{ item.description }} </p>

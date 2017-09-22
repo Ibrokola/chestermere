@@ -11,7 +11,7 @@ from about.utils import create_slug
 class AddHeader(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='images/')
-    description = models.TextField(max_length=None)
+    # description = models.TextField(max_length=None)
 
     def __str__(self):
         return str(self.title)

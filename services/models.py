@@ -11,11 +11,13 @@ from about.utils import create_slug
 
 class ImageHeader(models.Model):
     image = models.ImageField(upload_to='images/')
-    service = models.ForeignKey('Service', on_delete=models.CASCADE)
+    # service = models.ForeignKey('Service', on_delete=models.CASCADE)
+    title = models.CharField(max_length=300)
+    intro = models.TextField(max_length=None)
 
 
     def __str__(self):
-        return str(self.image)
+        return str(self.title)
 
 
 class Service(models.Model):

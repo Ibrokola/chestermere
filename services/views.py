@@ -14,7 +14,7 @@ from .models import ImageHeader, Service
 def service_list(request):
     index_page = ImageHeader.objects.all()
     service = Service.objects.all()
-    template = 'list_view.html'
+    template = 'services/list_view.html'
     context ={
         "index_page": index_page,
         "service": service

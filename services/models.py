@@ -8,7 +8,6 @@ from django.utils.text import slugify
 from about.utils import create_slug
 
 
-
 class ImageHeader(models.Model):
     image = models.ImageField(upload_to='images/')
     # service = models.ForeignKey('Service', on_delete=models.CASCADE)
@@ -22,7 +21,7 @@ class ImageHeader(models.Model):
 
 class Service(models.Model):
     title = models.CharField(max_length=300)
-    description = models.TextField(max_length=None)
+    description = models.TextField(max_length=None, blank=True, null=True)
     slug = models.SlugField(blank=True, null=True)
 
     def __str__(self):

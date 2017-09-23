@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^forms/', include('registry.urls')),
     url(r'^extra/', include('additional.urls')),
     url(r'^services/', include('services.urls', namespace='services')),
+    url(r'^certificates/', include('certificates.urls', namespace='cert')),
 ]
 
 

@@ -19,14 +19,14 @@ class CertHeader(models.Model):
 
 class CertCategory(models.Model):
     title = models.CharField(max_length=300)
-    description = models.TextField(max_length=None)
+    description = models.TextField(max_length=None, null=True, blank=True)
     slug = models.SlugField(blank=True, null=True)
 
     def __str__(self):
         return str(self.title)
     
-    # def get_absolute_url(self):
-    #     return reverse("cert:cert_detail",kwargs={"slug": self.slug})
+    def get_absolute_url(self):
+        return reverse("cert:cert_detail",kwargs={"slug": self.slug})
 
 def cert_pre_save_reciever(sender, instance, *args, **kwargs):
     if not instance.slug:

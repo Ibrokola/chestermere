@@ -22,17 +22,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3">
-                {% for item in service %}
-                    <span><a href="" style="text-decoration:none; color:darkolivegreen;">
-                        <h6 class="h6-responsive">{{ item.title }}</h6>
-                    </a></span>   
-                {% endfor %}
+                {% include 'services/snippet/list_side.html' %}
             </div>
             <div class="col-md-9 col-sm-9">
                 {% for item in index_page %}
                     <h4 class="h4-responsive" style="color:orange;">{{ item.title }}</h4>
                    <!-- <h5 class="h5-responsive" style="padding-top: 10px; color:orange;">{{ item.sub_title }}</h5> -->
-                    <p>{{ item.intro|safe }}</p>
+                    <p style="padding-top: 10px;">{{ item.intro|safe }}</p>
                 {% endfor %}
             </div>
         </div>

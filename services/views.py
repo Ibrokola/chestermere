@@ -23,4 +23,13 @@ def service_list(request):
 
 
 def service_detail(request, slug=None):
-    pass
+    try:
+        service = get_object_or_404(Service, slug=slug)
+    except Service.MultipleObjectsReturned:
+        service = Service.objects.filter(slug=slug).order_by('title').first()
+
+    template = 'services/detail_view.html'
+    context ={
+        "service": service
+    }
+    return render(request, template, context)

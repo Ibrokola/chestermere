@@ -27,8 +27,8 @@ class Service(models.Model):
     def __str__(self):
         return str(self.title)
 
-    # def get_absolute_url(self):
-    #     return reverse("services:detail",kwargs={"slug": self.slug})
+    def get_absolute_url(self):
+        return reverse("services:service_detail",kwargs={"slug": self.slug})
 
 def service_pre_save_reciever(sender, instance, *args, **kwargs):
     if not instance.slug:

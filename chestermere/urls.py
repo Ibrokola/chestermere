@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^about/', include('about.urls')),
     url(r'^forms/', include('registry.urls')),
     url(r'^extra/', include('additional.urls')),
-    url(r'^services/', include('services.urls')),
+    url(r'^services/', include('services.urls', namespace='services')),
 ]
 
 

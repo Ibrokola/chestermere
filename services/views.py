@@ -23,6 +23,7 @@ def service_list(request):
 
 
 def service_detail(request, slug=None):
+    service1 = Service.objects.all()
     try:
         service = get_object_or_404(Service, slug=slug)
     except Service.MultipleObjectsReturned:
@@ -30,6 +31,7 @@ def service_detail(request, slug=None):
 
     template = 'services/detail_view.html'
     context ={
+        "service1": service1,
         "service": service
     }
     return render(request, template, context)

@@ -10,7 +10,7 @@ from about.utils import create_slug
 class CertHeader(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='images/')
-    description = models.TextField(max_length=None)
+    intro = models.TextField(max_length=None)
 
     def __str__(self):
         return str(self.title)
@@ -26,10 +26,11 @@ class CertCategory(models.Model):
         return str(self.title)
     
     # def get_absolute_url(self):
-    #     return reverse("cert:detail",kwargs={"slug": self.slug})
+    #     return reverse("cert:cert_detail",kwargs={"slug": self.slug})
 
 def cert_pre_save_reciever(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = create_slug(instance)
 
 pre_save.connect(cert_pre_save_reciever, sender=CertCategory)
+

@@ -23,6 +23,8 @@ class Reminder(models.Model):
     image = models.ImageField(upload_to='images/', blank=True, null=True)
     button_remind = models.CharField(max_length=500, blank=True, null=True)
     button_renew = models.CharField(max_length=500, blank=True, null=True)
+    car_test = models.CharField(max_length=500, blank=True, null=True)
+    car_proof = models.CharField(max_length=500, blank=True, null=True)
 
     def __str__(self):
         return str(self.title)

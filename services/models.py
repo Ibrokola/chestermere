@@ -20,9 +20,15 @@ class ImageHeader(models.Model):
 
 
 class Service(models.Model):
+    img = models.ImageField(upload_to='images/', null=True, blank=True)
     title = models.CharField(max_length=300)
     description = models.TextField(max_length=None, blank=True, null=True)
+    external_link = models.CharField(max_length=300, null=True, blank=True)
+    external_link2 = models.CharField(max_length=300, null=True, blank=True)
+    external_link3 = models.CharField(max_length=300, null=True, blank=True)
+    external_link4 = models.CharField(max_length=300, null=True, blank=True)
     slug = models.SlugField(blank=True, null=True)
+
 
     def __str__(self):
         return str(self.title)

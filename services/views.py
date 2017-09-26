@@ -13,8 +13,8 @@ from .models import ImageHeader, Service
 
 def service_list(request):
     index_page = ImageHeader.objects.all()
-    service1 = Service.objects.filter(section__title='section1')
-    service2 = Service.objects.filter(section__title='section2')
+    service1 = Service.objects.filter(parts__title='part1')
+    service2 = Service.objects.filter(parts__title='part2')
     # service = Service.objects.all()
     template = 'services/list_view.html'
     context ={
@@ -28,8 +28,8 @@ def service_list(request):
 
 def service_detail(request, slug=None):
     # service1 = Service.objects.all()
-    service1 = Service.objects.filter(section__title='section1')
-    service2 = Service.objects.filter(section__title='section2')
+    service1 = Service.objects.filter(parts__title='part1')
+    service2 = Service.objects.filter(parts__title='part2')
     try:
         service = get_object_or_404(Service, slug=slug)
     except Service.MultipleObjectsReturned:

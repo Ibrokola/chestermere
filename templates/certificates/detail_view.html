@@ -12,9 +12,12 @@
                 {% include 'certificates/snippet/list_side.html' with cert=cert1 %}
             </div>
             <div class="col-md-9 col-sm-9">
+            {% if cert.img %}
+                <img src="{{ cert.img.url }}" alt="header.png" class="img-rounded img-responsive img-fluid">
+            {% endif %}
             {% if cert %}
                 {# for item in service #}
-                    <h4 class="h4-responsive" style="color:orange;">{{ cert.title }}</h4>
+                    <h4 class="h4-responsive" style="color:orange; padding-top: 20px;">{{ cert.title }}</h4>
                     <!-- <h5 class="h5-responsive" style="padding-top: 10px; color:orange;">{{ item.sub_title }}</h5> -->
                     <p style="padding-top: 10px;">{{ cert.description|safe }}</p>
                 {# endfor #}

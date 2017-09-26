@@ -12,12 +12,8 @@
                 {% include 'services/snippet/list_side.html' with service=service1 %}
             </div>
             <div class="col-md-9 col-sm-9">
-            {% if service %}
-                {# for item in service #}
-                    <h4 class="h4-responsive" style="color:orange;">{{ service.title }}</h4>
-                    <!-- <h5 class="h5-responsive" style="padding-top: 10px; color:orange;">{{ item.sub_title }}</h5> -->
-                    <p style="padding-top: 10px;">{{ service.description|safe }}</p>
-                {# endfor #}
+            {% if service.img %}
+                <img src="{{ service.img }}" alt="header.png" class="img-rounded img-responsive img-fluid">
             {% endif %}
             </div>
         </div>
@@ -30,7 +26,13 @@
 
             </div>
             <div class="col-md-9 col-sm-9">
-                
+            {% if service %}
+                {# for item in service #}
+                    <h4 class="h4-responsive" style="color:orange;">{{ service.title }}</h4>
+                    <!-- <h5 class="h5-responsive" style="padding-top: 10px; color:orange;">{{ item.sub_title }}</h5> -->
+                    <p style="padding-top: 10px;">{{ service.description|safe }}</p>
+                {# endfor #}
+            {% endif %}    
             </div>
         </div>
     </div>

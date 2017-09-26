@@ -8,8 +8,8 @@ from about.utils import create_slug
 
 
 class CertHeader(models.Model):
-    title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='images/')
+    title = models.CharField(max_length=200)
     intro = models.TextField(max_length=None)
 
     def __str__(self):
@@ -18,6 +18,7 @@ class CertHeader(models.Model):
 
 
 class CertCategory(models.Model):
+    img = models.ImageField(upload_to='images/', null=True, blank=True)
     title = models.CharField(max_length=300)
     description = models.TextField(max_length=None, null=True, blank=True)
     slug = models.SlugField(blank=True, null=True)

@@ -27,7 +27,7 @@ class Section(models.Model):
 
 
 class Service(models.Model):
-    section = models.ForeignKey(Section, related_name='section_service')
+    section = models.ForeignKey(Section, related_name='services_parts')
     img = models.ImageField(upload_to='images/', null=True, blank=True)
     title = models.CharField(max_length=300)
     description = models.TextField(max_length=None, blank=True, null=True)

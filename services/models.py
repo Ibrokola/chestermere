@@ -18,8 +18,16 @@ class ImageHeader(models.Model):
     def __str__(self):
         return str(self.title)
 
+class Section(models.Model):
+    title = models.CharField(max_length=500)
+    # title2 = models.CharField(max_length=500)
+
+    def __str__(self):
+        return str(self.title)
+
 
 class Service(models.Model):
+    section = models.ForeignKey(Section, related_name='section_service')
     img = models.ImageField(upload_to='images/', null=True, blank=True)
     title = models.CharField(max_length=300)
     description = models.TextField(max_length=None, blank=True, null=True)

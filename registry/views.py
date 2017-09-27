@@ -12,7 +12,7 @@ from django.core.urlresolvers import reverse
 from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 
-from .models import RegHeaderImage, Section, RegForm
+from .models import RegHeaderImage, RegCategory, RegForm
 
 
 
@@ -27,13 +27,13 @@ def reg_list(request):
 
 def reg_detail(request):
     header = RegHeaderImage.objects.all()
-    reg1 = RegForm.objects.filter(section__title='section1')
-    reg2 = RegForm.objects.filter(section__title='section2')
+    # reg1 = RegForm.objects.filter(section__title='section1')
+    # reg2 = RegForm.objects.filter(section__title='section2')
     template = 'registry/regforms.html'
     context = {
         'header': header,
-        'reg1': reg1,
-        'reg2': reg2
+        # 'reg1': reg1,
+        # 'reg2': reg2
     }
     return render(request, template, context)
 

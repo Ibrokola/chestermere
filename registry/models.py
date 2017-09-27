@@ -22,7 +22,7 @@ class RegHeaderImage(models.Model):
     # def get_absolute_url(self):
     #     return reverse("forms:detail")
 
-class Section(models.Model):
+class RegCategory(models.Model):
     title = models.CharField(max_length=500)
     # title2 = models.CharField(max_length=500)
 
@@ -32,7 +32,7 @@ class Section(models.Model):
 
 class RegForm(models.Model):
     header = models.ForeignKey(RegHeaderImage, related_name='page_header')
-    section = models.ForeignKey(Section, related_name='section_parts')
+    category = models.ForeignKey(RegCategory, related_name='section_parts')
     title = models.CharField(max_length=300)
     slug = models.SlugField(blank=True, null=True)
     # download_file = models.FileField(null=True, blank=True)

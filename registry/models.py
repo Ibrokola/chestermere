@@ -23,18 +23,34 @@ class RegHeaderImage(models.Model):
     #     return reverse("forms:detail")
 
 class RegCategory(models.Model):
-    title = models.CharField(max_length=500)
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
+    title = models.CharField(max_length=200)
+    slug = models.SlugField(blank=True, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False, null=True, blank=True)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True, null=True, blank=True)
     # title2 = models.CharField(max_length=500)
 
     def __str__(self):
         return str(self.title)
+    
+    # def get_absolute_url(self):
+	# 	return reverse('category_detail', kwargs={"cat_slug": self.slug})
 
+
+
+def cat_pre_save_reciever(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = create_slug(instance)
+
+pre_save.connect(cat_pre_save_reciever, sender=RegCategory)
 
 class RegForm(models.Model):
     header = models.ForeignKey(RegHeaderImage, related_name='page_header')
     category = models.ForeignKey(RegCategory, related_name='section_parts')
     title = models.CharField(max_length=300)
     slug = models.SlugField(blank=True, null=True)
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False) #time added
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True) #last saved
     # download_file = models.FileField(null=True, blank=True)
     ext_link = models.CharField(max_length=1000, null=True, blank=True)
 
@@ -43,8 +59,7 @@ class RegForm(models.Model):
         return str(self.title)
 
     # def get_absolute_url(self):
-	# 	view_name = "products:detail_slug"
-	# 	return reverse(view_name, kwargs={"slug": self.slug})
+	# 	return reverse('video_detail', kwargs={"vid_slug": self.slug, "cat_slug": self.category.slug})
 
 
 def reg_pre_save_reciever(sender, instance, *args, **kwargs):

@@ -33,8 +33,8 @@ class RegCategory(models.Model):
     def __str__(self):
         return str(self.title)
     
-    # def get_absolute_url(self):
-	# 	return reverse('category_detail', kwargs={"cat_slug": self.slug})
+    def get_absolute_url(self):
+		return reverse('forms:category_detail', kwargs={"cat_slug": self.slug})
 
 
 
@@ -59,7 +59,7 @@ class RegForm(models.Model):
         return str(self.title)
 
     # def get_absolute_url(self):
-	# 	return reverse('video_detail', kwargs={"vid_slug": self.slug, "cat_slug": self.category.slug})
+	# 	return reverse('forms:reg_detail', kwargs={"reg_slug": self.slug, "cat_slug": self.category.slug})
 
 
 def reg_pre_save_reciever(sender, instance, *args, **kwargs):

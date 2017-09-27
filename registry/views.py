@@ -17,23 +17,27 @@ from .models import RegHeaderImage, RegCategory, RegForm
 
 
 def reg_list(request):
-    # header = RegHeaderImage.objects.all()
-    # template = 'registry/regforms.html'
-    # context = {
-    #     'header': header
-    # }
-    # return render(request, template, context)
-    pass
-
-def reg_detail(request):
     header = RegHeaderImage.objects.all()
-    # reg1 = RegForm.objects.filter(section__title='section1')
-    # reg2 = RegForm.objects.filter(section__title='section2')
-    template = 'registry/regforms.html'
+    cat = RegCategory.objects.all()
+    template = 'registry/regforms_list.html'
     context = {
         'header': header,
-        # 'reg1': reg1,
-        # 'reg2': reg2
+        'cat': cat
+    }
+    return render(request, template, context)
+
+
+def reg_detail(request, cat_slug=None):
+    header = RegHeaderImage.objects.all()
+    cat_q = get_object_or_404(RegCategory, slug=cat_slug)
+    reg = cat_q.regform_set.all()
+    # reg1 = RegForm.objects.filter(section__title='section1')
+    # reg2 = RegForm.objects.filter(section__title='section2')
+    template = 'registry/regforms_detail.html'
+    context = {
+        'header': header,
+        'cat_q': cat_q,
+        'reg': reg
     }
     return render(request, template, context)
 

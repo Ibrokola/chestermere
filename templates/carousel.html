@@ -13,8 +13,8 @@
           <div class="carousel-item{% if forloop.first %} active {% endif %}">
             <img class="d-block img-fluid img-responsive" src="{{ item.image.url }}" alt="chestermere" height="500">
             <div class="carousel-caption d-md-block">
-                <h3 class="h3-responsive">{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
+                <h3 class="h3-responsive wow fadeIn" data-wow-delay="0.30s">{{ item.title }}</h3>
+                <p class="wow fadeInUp" data-wow-delay="0.33s">{{ item.description }}</p>
             </div>
           </div>
           {% endfor %}

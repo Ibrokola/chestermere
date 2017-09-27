@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} {{ title }} | {{ block.super }} {% endblock %}
+{% block title %} {{ cat_q.title }} | {{ block.super }} {% endblock %}
 {% block content %}
 <section class="" style="padding-top: 10px; padding-bottom: 15px; background-color: rgb(248, 248, 248);">
     <div class="container">
@@ -22,12 +22,32 @@
                 {% include 'about/snippet/side_bar.html' %}
             </div>
             <div class="col-md-9 col-sm-9">
-                {% for item in header %}
-                    <h4 class="h4-responsive" style="color:orange">{{ item.title }}</h4>
-                    {% comment %} <h5 class="h5-responsive" style="padding-top: 10px;">{{ item.sub_title }}</h5> {% endcomment %}
-                    <p>{{ item.intro|safe }}</p>
+                {% if cat_q %}
+                    <h4 class="h4-responsive" style="color:orange">{{ cat_q.title }}</h4>
+                    <hr>
+                    <!-- <p>{{ item.intro|safe }}</p> -->
+                {% endif %}
+                {% for obj in reg_f %}
+                    {% if obj.ext_link %}
+                    <a href="{{ obj.ext_link }}" style="text-decoration:none; color:darkolivegreen" target="_blank"> <h6 class="h6-responsive" style="padding-top: 10px;">{{ obj.title }}</h6></a>
+                    {% else %}
+                    <a href="" style="text-decoration:none; color:darkolivegreen"><h6 class="h6-responsive" style="padding-top: 5px;">{{ obj.title }}</h6></a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
     </div>
 </section>
+<section class="" style="background-color: #D9DED7; padding-top: 40px; padding-bottom: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3">   
+            </div>
+            <div class="col-md-9 col-sm-9">
+                <h5 style="padding-bottom: 20px;"><a href="" style="text-decoration:none; color:darkolivegreen">Others....</a></h5>
+                
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

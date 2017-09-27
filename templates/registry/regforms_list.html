@@ -40,36 +40,18 @@
 
             </div>
             <div class="col-md-9 col-sm-9">
-                {% for obj in reg1 %}
-                    {% if obj.ext_link %}
-                        <a href="{{ obj.ext_link }}" style="text-decoration:none; color:darkolivegreen" target="_blank"> <h6 class="h6-responsive" style="padding-top: 5px;">{{ obj.title }}</h6></a>
-                        {% else %}
-                        <a href="" style="text-decoration:none; color:darkolivegreen"> <h6 class="h6-responsive" style="padding-top: 5px;">{{ obj.title }}</h6></a>
-                    {% endif %}
-                {% endfor %}
+                <div class="row">
+                    {% for item in cat %}
+                    <div class="col-md-3 col-sm-3 text-center">
+                        {% if item.img %}
+                            <a href="{{ item.get_absolute_url }}" style="text-decoration:none; color:darkolivegreen"> <img src="{{ item.img.url }}" alt="header.png" class="img-rounded img-responsive img-fluid"></a>
+                        {% endif %}
+                        <a href="{{ item.get_absolute_url }}" style="text-decoration:none; color:darkolivegreen"> <h6 class="h6-responsive" style="padding-top: 5px;">{{ item.title }}</h6></a>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
 </section>
-<section class="" style="background-color: #D9DED7; padding-top: 40px; padding-bottom: 50px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 col-sm-3">   
-            </div>
-            <div class="col-md-9 col-sm-9">
-                <h5 style="padding-bottom: 20px;"> The following forms are also provided by Chestermere Lake Registry: </h5>
-                {% for obj in reg2 %}
-                    {% if obj.ext_link %}
-                        <a href="{{ obj.ext_link }}" style="text-decoration:none; color:darkolivegreen" target="_blank"> <h6 class="h6-responsive" style="padding-top: 5px;">{{ obj.title }}</h6></a>
-                        {% else %}
-                        <a href="" style="text-decoration:none; color:darkolivegreen"> <h6 class="h6-responsive" style="padding-top: 5px;">{{ obj.title }}</h6></a>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
 {% endblock %}

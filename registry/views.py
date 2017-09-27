@@ -27,17 +27,20 @@ def reg_list(request):
     return render(request, template, context)
 
 
-def reg_detail(request, cat_slug=None):
+def reg_detail(request, slug=None):
     header = RegHeaderImage.objects.all()
-    cat_q = get_object_or_404(RegCategory, slug=cat_slug)
-    reg = cat_q.regform_set.all()
+    try:
+        cat_q = get_object_or_404(RegCategory, slug=slug)
+    except RegCategory.MultipleObjectsReturned:
+        cat_q = RegCategory.objects.filter(slug=slug).order_by('title').first()
+    reg_f = cat_q.regform_set.all()
     # reg1 = RegForm.objects.filter(section__title='section1')
     # reg2 = RegForm.objects.filter(section__title='section2')
     template = 'registry/regforms_detail.html'
     context = {
         'header': header,
         'cat_q': cat_q,
-        'reg': reg
+        'reg_f': reg_f
     }
     return render(request, template, context)
 

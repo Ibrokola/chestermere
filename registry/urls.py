@@ -5,5 +5,5 @@ from .views import reg_detail, reg_list
 
 urlpatterns = [
     url(r'^$', reg_list, name='reg_list'),
-    url(r'^(?P<cat_slug>[\w-]+)/$', reg_detail, name='form_detail'),
+    url(r'^(?P<slug>[\w-]+)/$', reg_detail, name='reg_detail'),
 ]

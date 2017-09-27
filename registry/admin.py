@@ -10,7 +10,7 @@ class RegFormAdmin(admin.ModelAdmin):
 	list_filter = ['updated', 'timestamp']
 	readonly_fields = ['updated', 'timestamp']
 	list_display = ("__str__", 'updated', 'timestamp')
-	fields = ['header','title', 'slug', 'category', 'ext_link']
+	fields = ['title', 'slug', 'category', 'ext_link']
 	search_fields = ['title']
 
 	class Meta:

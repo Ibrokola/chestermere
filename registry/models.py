@@ -23,7 +23,7 @@ class RegHeaderImage(models.Model):
     #     return reverse("forms:detail")
 
 class RegCategory(models.Model):
-    image = models.ImageField(upload_to='images/', null=True, blank=True)
+    img = models.ImageField(upload_to='images/', null=True, blank=True)
     title = models.CharField(max_length=200)
     slug = models.SlugField(blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False, null=True, blank=True)
@@ -34,7 +34,7 @@ class RegCategory(models.Model):
         return str(self.title)
     
     def get_absolute_url(self):
-		return reverse('forms:category_detail', kwargs={"cat_slug": self.slug})
+        return reverse('reg:reg_detail', kwargs={"slug": self.slug})
 
 
 
@@ -45,8 +45,8 @@ def cat_pre_save_reciever(sender, instance, *args, **kwargs):
 pre_save.connect(cat_pre_save_reciever, sender=RegCategory)
 
 class RegForm(models.Model):
-    header = models.ForeignKey(RegHeaderImage, related_name='page_header')
-    category = models.ForeignKey(RegCategory, related_name='section_parts')
+    # header = models.ForeignKey(RegHeaderImage, related_name='page_header')
+    category = models.ForeignKey(RegCategory)
     title = models.CharField(max_length=300)
     slug = models.SlugField(blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False) #time added

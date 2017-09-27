@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name='home'),
     url(r'^about/', include('about.urls')),
-    url(r'^forms/', include('registry.urls', namespace='forms')),
+    url(r'^forms/', include('registry.urls', namespace='reg')),
     url(r'^extra/', include('additional.urls')),
     url(r'^services/', include('services.urls', namespace='services')),
     url(r'^certificates/', include('certificates.urls', namespace='cert')),

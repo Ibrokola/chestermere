@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^$', home, name='home'),
     url(r'^about/', include('about.urls')),
     url(r'^forms/', include('registry.urls', namespace='reg')),
-    url(r'^extra/', include('additional.urls')),
+    url(r'^calendar/', include('additional.urls')),
     url(r'^services/', include('services.urls', namespace='services')),
     url(r'^certificates/', include('certificates.urls', namespace='cert')),
 ]

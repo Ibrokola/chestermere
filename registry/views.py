@@ -16,6 +16,7 @@ from .models import RegHeaderImage, RegCategory, RegForm
 
 
 
+
 def reg_list(request):
     header = RegHeaderImage.objects.all()
     cat = RegCategory.objects.all()
@@ -25,6 +26,7 @@ def reg_list(request):
         'cat': cat
     }
     return render(request, template, context)
+
 
 
 def reg_detail(request, slug=None):
@@ -43,6 +45,7 @@ def reg_detail(request, slug=None):
         'reg_f': reg_f
     }
     return render(request, template, context)
+
 
 def reg_download(request):
     pass

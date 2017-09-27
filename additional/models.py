@@ -8,6 +8,7 @@ from django.utils.text import slugify
 from about.utils import create_slug
 
 
+
 class AddHeader(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='images/')
@@ -15,6 +16,24 @@ class AddHeader(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+
+
+class DaysClosed(models.Model):
+    title = models.CharField(max_length=200)
+    days = models.TextField(max_length=None, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.title)
+
+
+class Calender(models.Model):
+    img = models.ImageField(upload_to='images/')
+    title = models.CharField(max_length=300)
+    desc = models.TextField(max_length=None)
+
+    def __str__(self):
+        return str(self.title) 
 
 
 

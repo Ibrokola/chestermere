@@ -12,7 +12,7 @@
                 {% include 'about/snippet/side_bar.html' %}
             </div>
             <div class="col-md-9 col-sm-9">
-                <h4>Search {% if request.GET.q %}<small>Results for {{ request.GET.q }}</small>{% endif %}</h4>
+                <h4>Search {% if request.GET.q %}<small>Results for {{ request.GET.q }}</small>{% endif %}</h4><br><br>
                 {% for item in qs %}
                     <a href="{{ item.get_absolute_url }}">{{ item.title }}</a><br><br>
                 {% endfor %}

@@ -1,4 +1,5 @@
 {% load static %}
+{% load search_form %}
 <!-- <div class="bg-faded" style="background-color:#4F9269;"> -->
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded" style="background-color:#4F9269;">
     <div class="container">
@@ -40,12 +41,13 @@
                     <!-- <a class="nav-link" href="#">Contact</a> -->
                 </li>
                 
-                <form class="form-inline container-fluid" style="margin-right:10px;">
+                {% search_form request %}
+                <!-- <form class="form-inline container-fluid" style="margin-right:10px;">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="search here..." aria-describedby="basic-addon1">
                         <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
                     </div>
-                </form>
+                </form> -->
             </ul>
         </div>
     </div>

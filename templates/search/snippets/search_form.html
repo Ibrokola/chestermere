@@ -1,0 +1,14 @@
+<form method='GET' action="{% url 'search:default' %}" class="form-inline container-fluid" style="margin-right:10px;">
+    <div class="input-group">
+    <input type="text" name="q" value="{{ request.GET.q }}" class="form-control" placeholder="Search..." aria-describedby="basic-addon1">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+    <!-- <button class="btn btn-default" type="submit">Search</button> -->
+    </div>
+</form>
+
+<!-- <form class="form-inline container-fluid" style="margin-right:10px;">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="search here..." aria-describedby="basic-addon1">
+        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+    </div>
+</form> -->

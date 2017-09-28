@@ -14,16 +14,16 @@
             <div class="col-md-9 col-sm-9">
                 <h4>Search {% if request.GET.q %}<small>Results for {{ request.GET.q }}</small>{% endif %}</h4>
                 {% for item in qs %}
-                    <a href="{{ item.get_absolute_url }}">{{ item.title }}</a><br>
+                    <a href="{{ item.get_absolute_url }}">{{ item.title }}</a><br><br>
                 {% endfor %}
                 {% for item in s_qs %}
-                    <a href="{{ item.get_absolute_url }}">{{ item.title }}</a><br>
+                    <a href="{{ item.get_absolute_url }}">{{ item.title }}</a><br><br>
                 {% endfor %}
                 {% for item in r_qs %}
                     {% if item.ext_link %}
-                        <a href="{{ item.ext_link }}">{{ item.title }}</a><br>
+                        <a href="{{ item.ext_link }}">{{ item.title }}</a><br><br>
                     {% else %}
-                        <a href="{{ item.get_absolute_url }}">{{ item.title }}</a><br>
+                        <a href="{{ item.get_absolute_url }}">{{ item.title }}</a><br><br>
                     {% endif %} 
                 {% endfor %}
 

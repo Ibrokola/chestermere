@@ -20,7 +20,11 @@
                     <a href="{{ item.get_absolute_url }}">{{ item.title }}</a><br>
                 {% endfor %}
                 {% for item in r_qs %}
-                    <a href="{{ item.get_absolute_url }}">{{ item.title }}</a><br>
+                    {% if item.ext_link %}
+                        <a href="{{ item.ext_link }}">{{ item.title }}</a><br>
+                    {% else %}
+                        <a href="{{ item.get_absolute_url }}">{{ item.title }}</a><br>
+                    {% endif %} 
                 {% endfor %}
 
             </div>

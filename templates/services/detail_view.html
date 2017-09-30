@@ -16,9 +16,9 @@
                 <img src="{{ service.img.url }}" alt="header.png" class="img-rounded img-responsive img-fluid">
             {% endif %}
             {% if service %}
-                <h4 class="h4-responsive" style="color:orange; padding-top: 20px;">{{ service.title }}</h4><br>
+                <h4 class="h4-responsive" style="color:orange; padding-top: 20px;">{{ service.title }}</h4>
                 {% if service.external_link %}
-                    <iframe src="{{ service.external_link }}" style="border:1px solid #09C;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-moz-box-shadow: 3px 3px 3px #888;-webkit-box-shadow: 3px 3px 3px #888;box-shadow: 3px 3px 3px #888;background:#eee;">
+                    <iframe src="{{ service.external_link }}" style="padding-top:20px; border:1px solid #09C;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-moz-box-shadow: 3px 3px 3px #888;-webkit-box-shadow: 3px 3px 3px #888;box-shadow: 3px 3px 3px #888;background:#eee;">
                     </iframe>
                 {% endif %}
                 <br>

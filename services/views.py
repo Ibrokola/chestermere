@@ -13,13 +13,14 @@ from .models import ImageHeader, Service
 
 def service_list(request):
     index_page = ImageHeader.objects.all()
-    service1 = Service.objects.filter(parts__title='part1')
-    service2 = Service.objects.filter(parts__title='part2')
+    service1 = Service.objects.filter(parts__title='part1').order_by('-updated')
+    service2 = Service.objects.filter(parts__title='part2').order_by('-updated')
+    service3 = Service.objects.filter(parts__title='part3').order_by('-updated')
     # service = Service.objects.all()
     template = 'services/list_view.html'
     context ={
         "index_page": index_page,
-        # "service": service,
+        "service3": service3,
         "service1": service1,
         "service2": service2
     }

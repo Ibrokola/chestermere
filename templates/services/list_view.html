@@ -20,7 +20,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3">
-                {% include 'services/snippet/list_side.html' %}
+                {% include 'services/snippet/list_side.html' with service1=service1 service2=service2 service3=service3 %}
             </div>
             <div class="col-md-9 col-sm-9">
                 {% for item in index_page %}

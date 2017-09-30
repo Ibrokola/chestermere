@@ -30,6 +30,8 @@ class Service(models.Model):
     parts = models.ForeignKey(Part)
     img = models.ImageField(upload_to='images/', null=True, blank=True)
     title = models.CharField(max_length=300)
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False) #time added
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
     description = models.TextField(max_length=None, blank=True, null=True)
     external_link = models.CharField(max_length=300, null=True, blank=True)
     external_link2 = models.CharField(max_length=300, null=True, blank=True)

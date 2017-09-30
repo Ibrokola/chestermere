@@ -8,7 +8,7 @@ def extra_list(request):
     header = AddHeader.objects.all()
     cat = AddCategory.objects.all()
     closed = DaysClosed.objects.all() 
-    calender = Calender.objects.all()
+    calender = Calender.objects.all().order_by('-updated')
     template = 'additional/extra.html'
     context = {
         'header': header,

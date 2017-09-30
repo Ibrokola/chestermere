@@ -31,6 +31,9 @@ class Calender(models.Model):
     img = models.ImageField(upload_to='images/')
     title = models.CharField(max_length=300)
     desc = models.TextField(max_length=None)
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False) #time added
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
 
     def __str__(self):
         return str(self.title) 

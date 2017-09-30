@@ -29,7 +29,8 @@ class DaysClosed(models.Model):
 
 class Calender(models.Model):
     img = models.ImageField(upload_to='images/')
-    pos = models.CharField(max_length=300, default = 'Jan')
+    # pos = models.CharField(max_length=300, default = 'Jan')
+    order = models.CharField(max_length=300, null=True, blank=True)
     title = models.CharField(max_length=300)
     desc = models.TextField(max_length=None)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False) #time added

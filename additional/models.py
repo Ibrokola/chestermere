@@ -29,7 +29,7 @@ class DaysClosed(models.Model):
 
 class Calender(models.Model):
     img = models.ImageField(upload_to='images/')
-    month = models.CharField(max_length=300)
+    mnt = models.CharField(max_length=300)
     title = models.CharField(max_length=300)
     desc = models.TextField(max_length=None)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False) #time added

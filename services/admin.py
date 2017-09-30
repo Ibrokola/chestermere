@@ -9,7 +9,7 @@ class ServiceAdmin(admin.ModelAdmin):
 	list_filter = ['updated', 'timestamp']
 	readonly_fields = ['updated', 'timestamp']
 	list_display = ("__str__", 'updated', 'timestamp')
-	fields = ['img', 'parts', 'title', 'slug', 'description', 'ext_link', 'ext_link2', 'ext_link3', 'ext_link4']
+	fields = ['img', 'parts', 'title', 'slug', 'description', 'external_link', 'external_link2', 'external_link3', 'external_link4']
 	search_fields = ['title']
 
 	class Meta:

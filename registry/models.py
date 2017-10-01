@@ -47,7 +47,7 @@ pre_save.connect(cat_pre_save_reciever, sender=RegCategory)
 class RegForm(models.Model):
     # header = models.ForeignKey(RegHeaderImage, related_name='page_header')
     category = models.ForeignKey(RegCategory)
-    title = models.CharField(max_length=300)
+    title = models.CharField(max_length=1000)
     slug = models.SlugField(blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False) #time added
     updated = models.DateTimeField(auto_now_add=False, auto_now=True) #last saved

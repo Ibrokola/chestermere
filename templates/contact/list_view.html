@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             {% for obj in drive_g %}
-            <div class="col-sm-3 col-md-3">
+            <div class="col-sm-4 col-md-4">
                 {% if obj.img %}
                     <a {% if obj.d_link %}href="{{ obj.d_link }}"{% endif %} target="_blank"> <img src="{{ obj.img.url }}" alt="header.png" class="img-rounded img-responsive img-fluid"></a>              
                 {% endif %}

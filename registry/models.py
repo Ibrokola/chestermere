@@ -28,6 +28,7 @@ class RegCategory(models.Model):
     slug = models.SlugField(blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False, null=True, blank=True)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True, null=True, blank=True)
+    new_link = models.CharField(max_length=1000, null=True, blank=True)
     # title2 = models.CharField(max_length=500)
 
     def __str__(self):

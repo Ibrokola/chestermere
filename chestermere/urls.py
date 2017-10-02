@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^about/', include('about.urls')),
     url(r'^forms/', include('registry.urls', namespace='reg')),
     url(r'^renewal/', include('additional.urls')),
+    url(r'^drivers/', include('contact.urls')),
     url(r'^search/', include('search.urls', namespace='search')),
     url(r'^services/', include('services.urls', namespace='services')),
     url(r'^certificates/', include('certificates.urls', namespace='cert')),

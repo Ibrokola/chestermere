@@ -26,12 +26,12 @@ SECURE_HSTS_SECONDS             = 1000000
 SECURE_FRAME_DENY               = True
 
 
-# ROLLBAR = {
-#     'access_token': config('ROLLBAR_ACCESS_TOKEN'),
-#     'environment': 'development' if DEBUG else 'production',
-#     'branch': 'master',
-#     'root': '/absolute/path/to/code/root',
-# }
+ROLLBAR = {
+    'access_token': config('ROLLBAR_ACCESS_TOKEN'),
+    'environment': 'development' if DEBUG else 'production',
+    'branch': 'master',
+    'root': '/absolute/path/to/code/root',
+}
 
 # Application definition
 

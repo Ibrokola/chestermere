@@ -68,6 +68,7 @@
 
         <!-- Core JS Files -->
         <script src="{% static 'js/jquery-3.2.1.js' %}" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js"></script>
         <script src="{% static 'js/jquery-ui-1.12.1.custom.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'js/tether.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
@@ -83,6 +84,82 @@
         <script src="{# static 'js/moment.min.js' #}"></script>
         <script src="{# static 'js/bootstrap-datetimepicker.min.js' #}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+        <script>
+            $(document).ready(function(){
+                var servVisible = 'servVisible';
+                var servElement = $('.service');
+                var getCookie = function(){
+                    return JSON.parse(Cookies.get(servVisible) || 'false');
+                };
+                var setCookie = function(value){
+                    Cookies.set(servVisible, value)
+                };
+                var visible = getCookie();
+                servElement.toggle(visible);
+                setCookie(visible);
+
+                $(".motor").click(function(){
+                    var visible = !getCookie();
+                    setCookie(visible);
+                    servElement.toggle(visible);
+                });
+
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                var servSeen = 'servSeen';
+                var seenElement = $('.service1');
+                var getCookie = function(){
+                    return JSON.parse(Cookies.get(servSeen) || 'false');
+                };
+                var setCookie = function(e){
+                    Cookies.set(servSeen, e)
+                };
+                var seen = getCookie();
+                seenElement.toggle(seen);
+                setCookie(seen);
+
+                $(".motor1").click(function(){
+                    var seen = !getCookie();
+                    setCookie(seen);
+                    seenElement.toggle(seen);
+                });
+
+            });
+
+            $(document).ready(function(){
+                    var servSeeing = 'servSeeing';
+                    var seeingElement = $('.service2');
+                    var getCookie = function(){
+                        return JSON.parse(Cookies.get(servSeeing) || 'false');
+                    };
+                    var setCookie = function(val){
+                        Cookies.set(servSeeing, val)
+                    };
+                    var seeing = getCookie();
+                    seeingElement.toggle(seeing);
+                    setCookie(seeing);
+
+                    $(".motor2").click(function(){
+                        var seeing = !getCookie();
+                        setCookie(seeing);
+                        seeingElement.toggle(seeing);
+                    });
+                // {# endblock #}
+
+                $('a').click(function() {
+                    localStorage.setItem('collapseItem', $(this).attr('href'));
+                });
+
+                var collapseItem = localStorage.getItem('collapseItem'); 
+                if (collapseItem) {
+                    $(collapseItem).collapse('show')
+                }
+
+            });
+
+        </script>
         <script>
             new WOW().init();
         </script>
